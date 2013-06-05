@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 
 @XmlRootElement
 @XmlSeeAlso({ GreenHouse.class })
-public class House {
+public abstract class House {
 
     private String houseName;
 

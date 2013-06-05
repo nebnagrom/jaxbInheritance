@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import bmorgan.jaxbInheritance.model.BlueHouse;
 import bmorgan.jaxbInheritance.model.GreenHouse;
 import bmorgan.jaxbInheritance.model.HousingEstate;
+import bmorgan.jaxbInheritance.model.HouseBasedHousingEstate;
+import bmorgan.jaxbInheritance.model.NonGenericHousingEstate;
 import bmorgan.jaxbInheritance.model.RedHouse;
 
 @Component
@@ -27,7 +29,39 @@ public class HousingEstateResource {
 
         return housingEstate;
     }
-    
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("blueHouseBased")
+    public HouseBasedHousingEstate getBlueHouseBased() {
+
+        HouseBasedHousingEstate housingEstate = new HouseBasedHousingEstate();
+        housingEstate.addHouse(new BlueHouse("first blue", 1));
+        housingEstate.addHouse(new BlueHouse("2 blue", 2));
+
+        return housingEstate;
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("blueNonGeneric")
+    public NonGenericHousingEstate getBlueNonGeneric() {
+
+        NonGenericHousingEstate housingEstate = new NonGenericHousingEstate();
+        housingEstate.addHouse(new BlueHouse("first blue", 1));
+        housingEstate.addHouse(new BlueHouse("2 blue", 2));
+
+        return housingEstate;
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("blueSingle")
+    public BlueHouse getBlueSingle() {
+
+        return new BlueHouse("first blue", 1);
+    }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("red")
@@ -39,7 +73,7 @@ public class HousingEstateResource {
 
         return housingEstate;
     }
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("green")

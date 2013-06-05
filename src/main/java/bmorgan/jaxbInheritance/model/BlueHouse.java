@@ -1,6 +1,9 @@
 package bmorgan.jaxbInheritance.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+
+@XmlRootElement
 public class BlueHouse extends House {
 
     private Integer blueAttribute;
@@ -14,11 +17,11 @@ public class BlueHouse extends House {
         this.blueAttribute = blueAttribute;
     }
 
-    public Integer getRedAttribute() {
+    public Integer getBlueAttribute() {
         return blueAttribute;
     }
 
-    public void setRedAttribute(Integer redAttribute) {
-        this.blueAttribute = redAttribute;
+    public void setBlueAttribute(Integer blueAttribute) {
+        this.blueAttribute = blueAttribute;
     }
 }
