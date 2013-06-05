@@ -15,3 +15,13 @@ Once this annotation is added use
 http://localhost:20001/rest/housingEstate/green
 
 to see what it should look like when it is working.
+
+There are also some examples of what I tried without generics or using the Super Class:
+
+Superclass Based:
+
+http://localhost:20001/rest/housingEstate/blueHouseBased
+
+No Generics:
+
+http://localhost:20001/rest/housingEstate/blueNonGeneric
